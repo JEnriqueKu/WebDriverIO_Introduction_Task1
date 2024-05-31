@@ -39,7 +39,7 @@ export class PostformLeft extends BaseComponent{
             'java': '27',
             'javascript': '28',
             'lua': '30',
-            'markdown': '267', // Note: This is disabled
+            'markdown': '267',
             'objc': '35',
             'php': '41',
             'perl': '40',
@@ -48,7 +48,7 @@ export class PostformLeft extends BaseComponent{
             'swift': '256'
         };
         await this.syntaxHighlighting.click();
-        const option = await $(`li[id*='-${items[language.toLowerCase()]}']`);
+        const option = await $(`li[aria-label*='POPULAR'] li[id*='-${items[language.toLowerCase()]}']`);
         await option.waitForDisplayed();
         await option.click();
     }
